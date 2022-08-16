@@ -10,44 +10,55 @@ import {
 } from "react-icons/bs";
 import { AiFillMail, AiOutlineEdit, AiTwotoneDelete } from "react-icons/ai";
 import { useState } from "react";
+import Modal from "./Modal";
 
-const Card = () => {
+const Card = ({ user, updateUserData, deleteUser }) => {
   const [isLiked, setIsLiked] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   const likeButtonHandler = () => {
     setIsLiked(!isLiked);
   };
   const editButtonHandler = () => {
+    setIsModalVisible(true);
     return;
   };
   const deleteButtonHandler = () => {
-    return;
+    deleteUser(user.id);
+    // return;
   };
+  const modalVisibilityHandler = () => {
+    setIsModalVisible(!isModalVisible);
+  };
+
   return (
     <div>
+      {isModalVisible && (
+        <Modal
+          user={user}
+          modalVisibilityHandler={modalVisibilityHandler}
+          updateUserData={updateUserData}
+        />
+      )}
       <div className="card">
         <div className="card-img-background">
-          <img
-            className="card-img"
-            src="https://avatars.dicebear.com/v2/avataaars/Bret.svg?options[mood][]=happy"
-            alt="loading"
-          />
+          <img className="card-img" src={user.profile} alt="loading" />
         </div>
         <div className="card-contents">
           <div className="card-content">
-            <h3 className="card-content-name">Name here</h3>
+            <h3 className="card-content-name">{user.name}</h3>
           </div>
           <div className="card-content">
             <AiFillMail />
-            <p className="card-content-text">email</p>
+            <p className="card-content-text">{user.email}</p>
           </div>
           <div className="card-content">
             <BsFillTelephoneFill />
-            <p className="card-content-text">pno</p>
+            <p className="card-content-text">{user.phone}</p>
           </div>
           <div className="card-content">
             <BsGlobe />
-            <p className="card-content-text">website</p>
+            <p className="card-content-text">{user.website}</p>
           </div>
         </div>
         <div className="card-buttons">

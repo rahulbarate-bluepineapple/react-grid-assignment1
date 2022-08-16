@@ -29,6 +29,10 @@
   text-align: left;
   flex: 1;
 }
+label::before {
+  content: "*";
+  color: red;
+}
 .modal-close-div {
   padding-right: 10px;
   flex: 1/4;
