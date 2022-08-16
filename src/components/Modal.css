@@ -36,6 +36,10 @@ label::before {
 .modal-close-div {
   padding-right: 10px;
   flex: 1/4;
+  color:#8b8b8b
+}
+.modal-close-div:hover {
+  color:#000000
 }
 .modal-body {
   flex: 1;

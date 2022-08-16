@@ -27,12 +27,14 @@ const Modal = ({ user, modalVisibilityHandler, updateUserData }) => {
       <div className="modal">
         <div className="modal-header">
           <div className="modal-title">Edit details</div>
-          <AiOutlineClose
-            className="modal-close-div"
-            onClick={() => {
-              modalVisibilityHandler();
-            }}
-          />
+          <button>
+            <AiOutlineClose
+              className="modal-close-div"
+              onClick={() => {
+                modalVisibilityHandler();
+              }}
+            />
+          </button>
         </div>
         <div className="modal-body">
           <div className="modal-input-group">
