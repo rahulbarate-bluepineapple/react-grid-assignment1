@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Card from "./components/Card";
+import HorizontalCard from "./components/HorizontalCard";
 import userData from "./userdata";
 // import Modal from "./components/Modal";
 
@@ -29,8 +30,12 @@ function App() {
   };
 
   return (
-    <div className="App">
-      {users.map((eachUser) => {
+    // <div className="App">
+    <div className="HorizontalApp">
+      {users.map((user) => {
+        return <HorizontalCard key={user.id} user={user} />;
+      })}
+      {/* {users.map((eachUser) => {
         return (
           <Card
             key={eachUser.id}
@@ -39,15 +44,7 @@ function App() {
             deleteUser={deleteUser}
           />
         );
-      })}
-
-      {/* cards */}
-      {/* <Card />
-      <Card />
-      <Card />
-      <Card /> */}
-
-      {/* <Modal /> */}
+      })} */}
     </div>
   );
 }

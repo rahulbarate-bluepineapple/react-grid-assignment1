@@ -8,3 +8,9 @@
   gap: 20px;
   padding: 10px;
 }
+.HorizontalApp {
+  background-color: rgb(240, 240, 240);
+  display: block;
+  padding: 10px;
+  padding: 10px 100px;
+}
