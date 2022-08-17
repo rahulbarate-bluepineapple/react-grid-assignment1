@@ -30,12 +30,12 @@ function App() {
   };
 
   return (
-    // <div className="App">
-    <div className="HorizontalApp">
-      {users.map((user) => {
-        return <HorizontalCard key={user.id} user={user} />;
-      })}
-      {/* {users.map((eachUser) => {
+    // <div className="HorizontalApp">
+    //   {users.map((user) => {
+    //     return <HorizontalCard key={user.id} user={user} />;
+    //   })}
+    <div className="App">
+      {users.map((eachUser) => {
         return (
           <Card
             key={eachUser.id}
@@ -44,7 +44,7 @@ function App() {
             deleteUser={deleteUser}
           />
         );
-      })} */}
+      })}
     </div>
   );
 }

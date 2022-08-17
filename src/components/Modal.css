@@ -29,36 +29,18 @@
   text-align: left;
   flex: 1;
 }
-label::before {
-  content: "*";
-  color: red;
-}
+
 .modal-close-div {
   padding-right: 10px;
   flex: 1/4;
-  color:#8b8b8b
+  color: #8b8b8b;
 }
 .modal-close-div:hover {
-  color:#000000
+  color: #000000;
 }
 .modal-body {
   flex: 1;
   padding: 20px;
-}
-.modal-input-group {
-  margin: 20px 30px;
-  text-align: right;
-}
-input {
-  height: 30px;
-  width: 300px;
-  border-radius: 5px;
-  border: 1.5px solid #eaeaea;
-}
-input:focus {
-  /* outline: none !important; */
-  border-color: rgb(99, 99, 255, 0.5);
-  outline: 1.5px solid rgb(99, 99, 255, 0.5);
 }
 .modal-footer {
   flex: 1/4;

@@ -49,15 +49,15 @@ const Card = ({ user, updateUserData, deleteUser }) => {
             <h3 className="card-content-name">{user.name}</h3>
           </div>
           <div className="card-content">
-            <AiFillMail />
+            <AiFillMail className="icon" />
             <p className="card-content-text">{user.email}</p>
           </div>
           <div className="card-content">
-            <BsFillTelephoneFill />
+            <BsFillTelephoneFill className="icon" />
             <p className="card-content-text">{user.phone}</p>
           </div>
           <div className="card-content">
-            <BsGlobe />
+            <BsGlobe className="icon" />
             <p className="card-content-text">{user.website}</p>
           </div>
         </div>

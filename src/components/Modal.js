@@ -1,6 +1,7 @@
 import "./Modal.css";
 import { AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
+import ModalInput from "./ModalInput";
 
 const Modal = ({ user, modalVisibilityHandler, updateUserData }) => {
   // const [userData, setUserData] = useState(user);
@@ -11,15 +12,17 @@ const Modal = ({ user, modalVisibilityHandler, updateUserData }) => {
 
   //handlers
   const okButtonHandler = () => {
-    updateUserData({
-      id: user.id,
-      name,
-      phone,
-      email,
-      website,
-      profile: user.profile,
-    });
-    modalVisibilityHandler();
+    if (name && phone && email && website) {
+      updateUserData({
+        id: user.id,
+        name,
+        phone,
+        email,
+        website,
+        profile: user.profile,
+      });
+      modalVisibilityHandler();
+    }
   };
 
   return (
@@ -37,50 +40,21 @@ const Modal = ({ user, modalVisibilityHandler, updateUserData }) => {
           </button>
         </div>
         <div className="modal-body">
-          <div className="modal-input-group">
-            <label>Name: </label>
-            <input
-              type="text"
-              className="form-control"
-              value={name}
-              onChange={(event) => {
-                setName(event.target.value);
-              }}
-            />
-          </div>
-          <div className="modal-input-group">
-            <label>Email: </label>
-            <input
-              type="text"
-              className="form-control"
-              value={email}
-              onChange={(event) => {
-                setEmail(event.target.value);
-              }}
-            />
-          </div>
-          <div className="modal-input-group">
-            <label>Phone: </label>
-            <input
-              type="text"
-              className="form-control"
-              value={phone}
-              onChange={(event) => {
-                setPhone(event.target.value);
-              }}
-            />
-          </div>
-          <div className="modal-input-group">
-            <label>Website: </label>
-            <input
-              type="text"
-              className="form-control"
-              value={website}
-              onChange={(event) => {
-                setWebsite(event.target.value);
-              }}
-            />
-          </div>
+          {/* name */}
+          <ModalInput setInputState={setName} value={name} label="Name" />
+
+          {/* email*/}
+          <ModalInput setInputState={setEmail} value={email} label="Email" />
+
+          {/* phone */}
+          <ModalInput setInputState={setPhone} value={phone} label="Phone" />
+
+          {/* website */}
+          <ModalInput
+            setInputState={setWebsite}
+            value={website}
+            label="Website"
+          />
         </div>
         <div className="modal-footer">
           <button

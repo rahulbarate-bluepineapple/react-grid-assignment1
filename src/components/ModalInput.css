@@ -1,0 +1,36 @@
+.modal-input-label-tr {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  margin: 10px 15px;
+}
+.modal-input-label::before {
+  content: "*";
+  color: red;
+}
+.modal-invalid-input-label-tr {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 22%;
+}
+.modal-invalid-input-lable-cell {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.modal-invalid-input-lable-cell > label {
+  font-size: 14px;
+  color: red;
+}
+input {
+  height: 30px;
+  width: 300px;
+  border-radius: 5px;
+  border: 1.5px solid #eaeaea;
+  margin: 0px 10px;
+}
+input:focus {
+  /* outline: none !important; */
+  border-color: rgb(99, 99, 255, 0.5);
+  outline: 1.5px solid rgb(99, 99, 255, 0.5);
+}
